@@ -18,12 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from my_app import views
+from movies import views as movie_views
 
 urlpatterns = [
     path(route="admin/", view=admin.site.urls),
-    path(route="", view=views.index), # mysite.com/ => index() => Hello World
-    path(route="greet/<str:first_name>", view=views.greet_user),
-    path(route="about/", view=views.about),
-    path(route="articles/<int:year>/", view=views.articles_year),
-    path(route="add/<int:a>/<int:b>/", view=views.add)
+    # path(route="", view=views.index), # mysite.com/ => index() => Hello World
+    # path(route="greet/<str:first_name>", view=views.greet_user),
+    # path(route="about/", view=views.about),
+    # path(route="articles/<int:year>/", view=views.articles_year),
+    # path(route="add/<int:a>/<int:b>/", view=views.add),
+
+    # URL for MOVIES APP
+    path(route="", view=movie_views.index)
 ]

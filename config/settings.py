@@ -38,6 +38,7 @@ INSTALLED_APPS:list[str] = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "my_app",
+    "movies"
 ]
 
 MIDDLEWARE:list[str] = [
