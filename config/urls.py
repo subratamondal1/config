@@ -29,6 +29,6 @@ urlpatterns = [
     # path(route="add/<int:a>/<int:b>/", view=views.add),
 
     # URL for MOVIES APP
-    path(route="", view=movie_views.index),
-    path(route="about/", view=movie_views.about)
+    path(route="", view=movie_views.index, name="index"),
+    path(route="about/", view=movie_views.about, name="about")
 ]
