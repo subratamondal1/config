@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from my_app import views as base_views
 from movies import views as movies_views
 
@@ -31,5 +31,8 @@ urlpatterns = [
 
     # URL for MOVIES APP
     path(route="movies/", view=movies_views.index, name="index"),
-    path(route="movies/about/", view=movies_views.about, name="about")
+    path(route="movies/about/", view=movies_views.about, name="about"),
+
+    # URL for JOB BOARD APP
+    path(route="", view=include(arg="job_board.urls"))
 ]
