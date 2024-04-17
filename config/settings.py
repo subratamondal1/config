@@ -37,8 +37,10 @@ INSTALLED_APPS:list[str] = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Apps installed by mr
     "my_app",
-    "movies"
+    "movies",
+    "job_board",
 ]
 
 MIDDLEWARE:list[str] = [
