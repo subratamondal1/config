@@ -1,0 +1,12 @@
+<html>
+    <body>
+        {% if job_post_detail %}
+        <p>{{job_post_detail.title}}</p>
+        <p>{{job_post_detail.description}}</p>
+        <p>{{job_post_detail.salary}}</p>
+        <p>{{job_post_detail.is_active}}</p>
+        {% else %}
+        <p>ID does not exist.</p>
+        {% endif %}
+    </body>
+</html>

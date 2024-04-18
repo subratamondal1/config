@@ -41,6 +41,7 @@ INSTALLED_APPS:list[str] = [
     "my_app",
     "movies",
     "job_board",
+    "django.contrib.humanize"
 ]
 
 MIDDLEWARE:list[str] = [

@@ -1,0 +1,23 @@
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posts</title>
+</head>
+<body>
+    {% if active_jobs %}
+        <ul>
+            {% for active_job in active_jobs  %}
+                <li><h5>{{active_job.title | title}}</h5></li>
+                <p>{{active_job.description}}</p>
+                <p>$ {{active_job.salary | intcomma}}</p>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p>No active job posts.</p>
+    {% endif %}
+</body>
+</html>

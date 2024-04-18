@@ -2,8 +2,8 @@ import os
 import django
 from django.db import models
 
-os.environ.setdefault(key='DJANGO_SETTINGS_MODULE', value='config.settings')
-django.setup()
+# os.environ.setdefault(key='DJANGO_SETTINGS_MODULE', value='config.settings')
+# django.setup()
 
 # Create your models here.
 # models => python classes
@@ -14,6 +14,7 @@ class JobPost(models.Model):
     description = models.TextField()
     company = models.CharField(max_length=100)
     salary = models.IntegerField()
+    is_active = models.BooleanField(default=False)
 
 # CRUD OPERATIONS
 # Create Read Update Delete
