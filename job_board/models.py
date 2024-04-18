@@ -16,6 +16,9 @@ class JobPost(models.Model):
     salary = models.IntegerField()
     is_active = models.BooleanField(default=False)
 
+    def __str__(self) -> str:
+        return f"{self.title} | {self.company} | {self.salary} | {self.is_active}"
+
 # CRUD OPERATIONS
 # Create Read Update Delete
 
