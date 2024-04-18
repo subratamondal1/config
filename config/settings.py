@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# TailwindCSS Settings
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS:list[str] = [
+    "127.0.0.1",
+]
+
 
 # Application definition
 
@@ -41,7 +48,10 @@ INSTALLED_APPS:list[str] = [
     "my_app",
     "movies",
     "job_board",
-    "django.contrib.humanize"
+    "django.contrib.humanize",
+    "tailwind",
+    "theme",
+    "django_browser_reload"
 ]
 
 MIDDLEWARE:list[str] = [
@@ -51,7 +61,7 @@ MIDDLEWARE:list[str] = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

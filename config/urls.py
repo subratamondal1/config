@@ -19,8 +19,11 @@ from django.contrib import admin
 from django.urls import path, include
 from my_app import views as base_views
 from movies import views as movies_views
+from theme import views as theme_views
 
 urlpatterns = [
+    # TailwindCSS Setup
+    path("__reload__/", include("django_browser_reload.urls")),
     # URL for BASE APP
     path(route="admin/", view=admin.site.urls),
     path(route="base/", view=base_views.index), # mysite.com/ => index() => Hello World
@@ -34,5 +37,9 @@ urlpatterns = [
     path(route="movies/about/", view=movies_views.about, name="about"),
 
     # URL for JOB BOARD APP
-    path(route="", view=include(arg="job_board.urls"))
+    path(route="", view=include(arg="job_board.urls")),
+
+    # URL for THEME APP
+    path(route="theme/", view=include(arg="theme.urls")),
+    path(route="theme/", view=theme_views.index)
 ]
